@@ -1,7 +1,8 @@
 // import Button from './Button.js';
-import Card from './Card.js';
+import CardSection from './CardSection.js';
 import NavBar from './NavBar.js';
-import Hero from './Hero.js'
+import Hero from './Hero.js';
+import MediaSection from './MediaSection.js';
 
 const travelLocations = [
   {
@@ -32,6 +33,24 @@ const travelLocations = [
     buttonLabel: "Visit",
     buttonLink: "https://..."
   }
+];
+
+const content = [
+  {
+      title: "First featurette heading. It’ll blow your mind.",
+      description: "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+      picture: "./dubai1.jpg",
+  },
+  {
+      title: "Second featurette heading. It’ll blow your mind.",
+      description: "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+      picture: "./dubai2.jpg",
+  },
+  {
+      title: "Third featurette heading. It’ll blow your mind.",
+      description: "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+      picture: "./dubai3.jpg" ,
+  },
 ]
 
 function App() {
@@ -44,29 +63,8 @@ function App() {
         buttonLabel1="Book Now"
         buttonLabel2="Learn More"
       />
-
-      <div className="container">
-        <div className="row">
-            {
-              travelLocations.map(
-                (location) => {
-                  return (
-                    <div className="col-12 col-md-3 mb-3">
-                      <Card 
-                        image={location.image}
-                        title={location.title}
-                        description={location.description}
-                        buttonLabel={location.buttonLabel}
-                        buttonLink={location.buttonLink}
-                      />
-                    </div>
-                  )
-                }
-              )
-            }
-        </div>
-      </div>
-
+      <CardSection content={travelLocations}/>
+      <MediaSection content={content}/>
 
     </div>
   );
