@@ -4,7 +4,7 @@ import NavBar from './NavBar.js';
 function RegistrationScreen() {
     return (
         <div>
-            <NavBar />
+            <NavBar logo="Logo"/>
             <RegistrationForm />
         </div>
     )
