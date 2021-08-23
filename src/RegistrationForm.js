@@ -22,6 +22,19 @@ const RegistrationForm = () => {
     // that works like an HTML form element
     const formData = new FormData();
 
+    // attachFile() will append to formData the avatar file
+    const attachFile = (evt) => {
+        // Create an array from the file attachments
+        const files = Array.from(evt.target.files);
+
+        // For each attachment, append the file to formData
+        files.forEach(
+            (fileAttachment, index) => {
+                formData.append(index, fileAttachment);
+            }
+        );
+    }
+
     const register = () => {
 
 
@@ -118,7 +131,10 @@ const RegistrationForm = () => {
             <br/><br/>
 
             <label>Upload your profile picture</label>
-            <input ref={(element)=>{ avatarInput = element}} className="field form-control" id="photo" name="file" type="file" multiple="multiple"/>
+            <input ref={(element)=>{ avatarInput = element}} 
+            onChange={attachFile}
+            className="field form-control" id="photo" name="file" 
+            type="file" multiple="multiple"/>
 
             <br/><br/>
 
