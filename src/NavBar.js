@@ -9,6 +9,8 @@ function NavBar(props) {
                 <div className="d-flex">
                     <ReactLink className="btn btn-primary mx-1" to="/">Home</ReactLink>
                     <ReactLink className="btn btn-primary mx-1" to="/register">Registration</ReactLink>
+                    <ReactLink className="btn btn-primary mx-1" to="/login">Login</ReactLink>
+                    <ReactLink className="btn btn-primary mx-1" to="/profile">Profile</ReactLink>
                 </div>
             </div>
         </nav>
